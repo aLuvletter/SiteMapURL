@@ -9,7 +9,7 @@ response = requests.get(inputurl, headers=headers)
 html = response.text
 url = str(re.findall('<loc>(.*?)</loc>', html))
 url1 = url.replace('[','').replace(',','\n').replace('\'',"").replace(" ", "") #去除多余符号
-f = open("SiteMapURL.txt", "w")  # 打开文件写入数据
+f = open("SiteMapURL.txt", "w")  # 新建并打开文件写入数据
 f.write(str(url1))
 f.close  # 关闭文件
 print('SiteMapURL本已生成')
